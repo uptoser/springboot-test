@@ -2,6 +2,7 @@ package me.ibeyond.springboottest.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -9,17 +10,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyCommandRunner implements CommandLineRunner {
     private static Logger logger = LoggerFactory.getLogger(MyCommandRunner.class);
-    @Value("${spring.web.url}")
-    private String url;
-    @Value("${spring.web.excute}")
-    private String excutePath;
-    @Value("${spring.auto.openurl}")
-    private boolean isOpen;
+
+    @Autowired
+    OpenBrowserSettings openBrowserSettings;
 
     @Override
-    public void run(String... args){
-        if (isOpen) {
-            String cmd = excutePath + " " + url;
+    public void run(String... args) {
+        if (openBrowserSettings.isOpen()) {
+            String execute = openBrowserSettings.getExecute();
+            String url = openBrowserSettings.getUrl();
+            String cmd = execute + " " + url;
             Runtime run = Runtime.getRuntime();
             try {
                 run.exec(cmd);
