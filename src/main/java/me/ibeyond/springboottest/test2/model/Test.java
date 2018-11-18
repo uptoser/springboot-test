@@ -1,7 +1,11 @@
-package me.ibeyond.springboottest.test.model;
+package me.ibeyond.springboottest.test2.model;
+
+import io.swagger.annotations.ApiModelProperty;
 
 public class Test {
+    @ApiModelProperty(value = "ID")
     private String id;
+    @ApiModelProperty(value = "名称" ,name = "name" )
     private String name;
 
     public String getId() {
@@ -24,7 +28,7 @@ public class Test {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Test{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';

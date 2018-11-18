@@ -19,20 +19,22 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Profile("dev")
 public class SwaggerConfig {
     @Bean
-    public Docket mainApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select().apis(SwaggerConfig.basePackage("me.ibeyond.springboottest.test,me.ibeyond.springboottest.test2"))
-                    .paths(PathSelectors.any())
-                .build().groupName("全部接口文档").pathMapping("/")
-                .apiInfo(apiInfo("全部接口文档", "", "1.0.0"));
-
-    } @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select().apis(SwaggerConfig.basePackage("me.ibeyond"))
-                    .paths(PathSelectors.ant("/product/**"))
-                .build().groupName("商品接口文档").pathMapping("/")
+                .paths(PathSelectors.ant("/product/**"))
+                .build().groupName("1-商品接口文档").pathMapping("/")
                 .apiInfo(apiInfo("商品接口文档", "", "1.0.0"));
+
+    }
+
+    @Bean
+    public Docket mainApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select().apis(SwaggerConfig.basePackage("me.ibeyond.springboottest.test,me.ibeyond.springboottest.test2"))
+                .paths(PathSelectors.any())
+                .build().groupName("2-全部接口文档").pathMapping("/")
+                .apiInfo(apiInfo("全部接口文档", "", "1.0.0"));
 
     }
 
@@ -40,13 +42,7 @@ public class SwaggerConfig {
         ApiInfo apiInfo = new ApiInfoBuilder().title(name).description(description).version(version).build();
         return apiInfo;
     }
-    /**
-     * Predicate that matches RequestHandler with given base package name for the class of the handler method.
-     * This predicate includes all request handlers matching the provided basePackage
-     *
-     * @param basePackage - base package of the classes
-     * @return this
-     */
+
     public static Predicate<RequestHandler> basePackage(final String basePackage) {
         return new Predicate<RequestHandler>() {
             @Override
@@ -56,12 +52,6 @@ public class SwaggerConfig {
         };
     }
 
-    /**
-     * 处理包路径配置规则,支持多路径扫描匹配以逗号隔开
-     *
-     * @param basePackage 扫描包路径
-     * @return Function
-     */
     private static Function<Class<?>, Boolean> handlerPackage(final String basePackage) {
         return new Function<Class<?>, Boolean>() {
 

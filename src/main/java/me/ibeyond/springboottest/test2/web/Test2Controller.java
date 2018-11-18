@@ -1,5 +1,6 @@
 package me.ibeyond.springboottest.test2.web;
 
+import me.ibeyond.springboottest.test2.model.Test;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class Test2Controller {
 
     @RequestMapping(value = "/main", method = RequestMethod.GET)
-    public String main() {
-        return "index";
+    public Test main() {
+        Test test = new Test();
+        test.setId("11");
+        test.setName("aaa");
+        return test;
     }
 }

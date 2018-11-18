@@ -22,7 +22,7 @@ public class OpenBrowserRunner implements CommandLineRunner {
             Runtime run = Runtime.getRuntime();
             try {
                 run.exec(cmd);
-                logger.debug("启动浏览器打开项目成功");
+                logger.info("启动浏览器打开项目成功|"+url);
             } catch (Exception e) {
                 e.printStackTrace();
                 logger.error(e.getMessage());

@@ -1,8 +1,13 @@
 package me.ibeyond.springboottest.base.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class ResponseEntity<T> {
+    @ApiModelProperty(value = "状态码")
     private int code;
+    @ApiModelProperty(value = "消息")
     private String message;
+    @ApiModelProperty(value = "结果")
     private T result;
 
     public ResponseEntity(int code, String message, T result) {
