@@ -1,10 +1,8 @@
 config:
   browser:
     open: true
-
-#config.browser.execute=C:\\Program Files\\Mozilla Firefox\\firefox.exe
-#config.browser.execute=C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe
-#config.browser.url=http://localhost:8080
+    url: http://localhost:8080
+    execute: C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe
 
 spring:
   thymeleaf:
