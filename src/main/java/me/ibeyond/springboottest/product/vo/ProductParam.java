@@ -5,9 +5,9 @@ import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value = "商品参数:ProductParam")
 public class ProductParam {
-    @ApiModelProperty(value = "商品名称" ,name = "name" )
+    @ApiModelProperty(value = "商品名称" ,name = "name",example = "苹果电脑")
     private String name;
-    @ApiModelProperty(value = "商品价格" ,name = "price" )
+    @ApiModelProperty(value = "商品价格" ,name = "price",example = "13999")
     private String price;
 
     public String getName() {
