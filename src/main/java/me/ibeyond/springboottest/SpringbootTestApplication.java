@@ -10,13 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @SpringBootApplication
 public class SpringbootTestApplication {
     @RequestMapping(value = "/", method = RequestMethod.GET)
+//    public String index() {
+//
+//        return "index1";
+//    }
+
     public String index() {
-        return "index1";
+        return "redirect:swagger-ui.html";
     }
 
-    //    public String index() {
-//        return "redirect:swagger-ui.html";
-//    }
     public static void main(String[] args) {
         SpringApplication.run(SpringbootTestApplication.class, args);
     }
