@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping(value = "/api")
 public class TestController {
 
-    private final UserSettings userSettings;
+    private  UserSettings userSettings;
 
     @Autowired
     public TestController(UserSettings userSettings){
