@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+//@EnableDiscoveryClient
 @SpringBootApplication
+
 public class SpringbootTestApplication {
     @RequestMapping(value = "/", method = RequestMethod.GET)
 //    public String index() {
