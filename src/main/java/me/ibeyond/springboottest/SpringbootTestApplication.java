@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 public class SpringbootTestApplication {
     @RequestMapping(value = "/", method = RequestMethod.GET)
-//    public String index() {
-//
-//        return "index1";
-//    }
-
     public String index() {
         return "redirect:swagger-ui.html";
     }
