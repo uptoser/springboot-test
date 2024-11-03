@@ -1,11 +1,5 @@
-package me.ibeyond.springboottest.test2.model;
+package me.ibeyond.springboottest.templatestest.model;
 
-/**
- * @Title: User
- * @Description: com.mengxuegu.springboot.entity
- * @Auther: www.mengxuegu.com
- * @Version: 1.0
- */
 public class User {
     private String username;
     // 1 女生 ， 2 男生

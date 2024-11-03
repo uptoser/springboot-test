@@ -1,4 +1,4 @@
-package me.ibeyond.springboottest.test.model;
+package me.ibeyond.springboottest.curdtest.model;
 
 public class Persion {
 

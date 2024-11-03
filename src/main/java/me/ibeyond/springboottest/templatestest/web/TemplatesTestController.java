@@ -1,6 +1,6 @@
-package me.ibeyond.springboottest.test2.web;
+package me.ibeyond.springboottest.templatestest.web;
 
-import me.ibeyond.springboottest.test2.model.User;
+import me.ibeyond.springboottest.templatestest.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 
 @Controller
-public class HelloController {
+public class TemplatesTestController {
 
     @RequestMapping(value = "/success", method = RequestMethod.GET)
     public String success(Map<String, Object> map) {

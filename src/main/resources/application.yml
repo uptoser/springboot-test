@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+emp:
+  name: "Ming \n Hello"
+  age: 22
+  salary: 10000
+  map: {a: 1,b: 2,c: 3}
+  list:
+    - 1
+    - java
+    - 2
+    - c++
+  set: {1,2,3,4,c}
+config:
+  browser:
+    open: true
+    url: "http://localhost:8080"
+    execute: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+
+
+

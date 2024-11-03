@@ -11,11 +11,15 @@
     <name>springboot-test</name>
     <description>Demo project for Spring Boot</description>
 
+    <!--
+    spring-boot-starter-parent ： 是当前项目的父依赖
+    spring-boot-starter-parent 继承 spring-boot-dependencies
+    spring-boot-dependencies 里面定义了很多组件版本号，我们引用对应依赖时，不需要写<version>标签
+    -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.1.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.0.6.RELEASE</version>
     </parent>
 
     <properties>
@@ -26,6 +30,7 @@
 
     <dependencies>
         <!--springBoot-->
+        <!--spring-boot-starter-web 构建WEB项目, 比如:tomcat springmvc-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -46,11 +51,11 @@
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
         <!--导入配置文件处理器-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-conﬁguration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-conﬁguration-processor</artifactId>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
         <!-- swagger-ui -->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -90,6 +95,8 @@
 
     </dependencies>
 
+
+    <!--可以将当前项目打成一个jar包进行运行-->
     <build>
         <plugins>
             <plugin>

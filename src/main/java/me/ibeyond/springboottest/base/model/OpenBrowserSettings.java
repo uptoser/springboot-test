@@ -1,4 +1,4 @@
-package me.ibeyond.springboottest.config;
+package me.ibeyond.springboottest.base.model;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

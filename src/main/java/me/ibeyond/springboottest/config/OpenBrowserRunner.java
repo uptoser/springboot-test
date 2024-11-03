@@ -1,5 +1,6 @@
 package me.ibeyond.springboottest.config;
 
+import me.ibeyond.springboottest.base.model.OpenBrowserSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,8 @@ public class OpenBrowserRunner implements CommandLineRunner {
             String cmd = execute + " " + url;
             Runtime run = Runtime.getRuntime();
             try {
-                run.exec(cmd);
-                logger.info("启动浏览器打开项目成功|"+url);
+//                run.exec(cmd);
+                logger.info("用浏览器打开地址："+url);
             } catch (Exception e) {
                 e.printStackTrace();
                 logger.error(e.getMessage());
